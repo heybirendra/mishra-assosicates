@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <ul class="footer-links">
                 <li>📍 Patna High Court, Bihar</li>
                 <li>📍 Darbhanga Dist. Court, Bihar</li>
-                <li>📧 kamal@kkmishra.in </li>
+                <li>📧 ikamal1950@gmail.com </li>
                 <li>📞 +91 6207 356 612</li>
                 <li>📧 jeetendramishra756@gmail.com</li>
                 <li>📞 +91 6202 805 957</li>

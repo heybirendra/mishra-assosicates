@@ -851,7 +851,7 @@ a {
 }
 
 .footer-content {
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
