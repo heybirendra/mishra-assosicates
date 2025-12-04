@@ -433,6 +433,24 @@ a {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
+.error-message {
+  display: block;
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  min-height: 1.2rem;
+}
+
+.form-input.invalid,
+.form-textarea.invalid {
+  border-color: #ff4444;
+}
+
+.form-input.valid,
+.form-textarea.valid {
+  border-color: #44ff44;
+}
+
 .hero-image {
   width: 100%;
   height: 400px;
@@ -851,23 +869,31 @@ a {
 }
 
 .footer-content {
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 2.5fr 1.2fr 1.5fr 1.8fr 1.8fr;
+  gap: 2rem;
+  padding: 0 2rem;
   margin-bottom: 2rem;
+}
+
+.footer-section {
+  min-width: 0;
 }
 
 .footer-section h3 {
   color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .footer-section p {
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.8;
+  font-size: 0.95rem;
 }
 
 .footer-links {
@@ -876,12 +902,17 @@ a {
 
 .footer-links li {
   margin-bottom: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer-links a {
   color: rgba(255, 255, 255, 0.8);
   transition: var(--transition-normal);
   display: inline-block;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .footer-links a:hover {

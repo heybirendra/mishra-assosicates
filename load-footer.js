@@ -39,11 +39,21 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
 
         <div class="footer-section">
+            <h3>Courts</h3>
+            <ul class="footer-links">
+                <li>📍 Civil Court, Biraul, Bihar</li>
+                <li>📍 Sub-Div Court, Benipur, Bihar</li>
+                <li>📍 Darbhanga Dist. Court, Bihar</li>
+                <li>📍 Patna High Court, Bihar</li>
+                <li>📍 Dist. Court, Dhanbad, Jharkhand</li>
+
+            </ul>
+        </div>
+
+        <div class="footer-section">
             <h3>Contact Info</h3>
             <ul class="footer-links">
-                <li>📍 Patna High Court, Bihar</li>
-                <li>📍 Darbhanga Dist. Court, Bihar</li>
-                <li>📧 ikamal1950@gmail.com </li>
+                <li> ikamal1950@gmail.com</li>
                 <li>📞 +91 6207 356 612</li>
                 <li>📧 jeetendramishra756@gmail.com</li>
                 <li>📞 +91 6202 805 957</li>
