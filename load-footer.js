@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="footer-section">
             <h3>KK Mishra & Associates</h3>
             <p>
-                Providing expert legal services across Bihar with integrity, dedication, and
+                Providing expert legal services across Bihar with integrity, dedication and
                 a commitment to justice. Your trusted legal partner for all court matters.
             </p>
         </div>
