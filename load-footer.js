@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <li>📍 Darbhanga Dist. Court, Bihar</li>
                 <li>📧 kamal@kkmishra.in </li>
                 <li>📞 +91 6207 356 612</li>
-                <li>📧 jitendra@kkmishra.in</li>
+                <li>📧 jeetendramishra756@gmail.com</li>
                 <li>📞 +91 6202 805 957</li>
                 <li>🕐 Mon-Sat: 10 AM - 6 PM</li>
             </ul>
