@@ -68,8 +68,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Form submission validation
+        // Form submission validation and EmailJS integration
         contactForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Always prevent default form submission
+
             let isValid = true;
 
             // Validate name
@@ -95,9 +97,73 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (!isValid) {
-                e.preventDefault();
-                alert('Please fix the errors in the form before submitting.');
+                return;
             }
+
+            // Send email using EmailJS
+            const submitButton = contactForm.querySelector('.form-submit');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: nameInput.value,
+                from_email: emailInput.value,
+                phone: phoneInput.value || 'Not provided',
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_email: 'jeetendramishra756@gmail.com, birendra.stpl@gmail.com'
+            };
+
+            // Send email using EmailJS
+            // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
+            emailjs.send('service_lf5kvsd', 'template_lwvhoxb', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+
+                    // Show success message
+                    showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+
+                    contactForm.reset();
+                    // Remove validation classes
+                    document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
+                        input.classList.remove('valid', 'invalid');
+                    });
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                }, function (error) {
+                    console.log('FAILED...', error);
+
+                    // Show error message
+                    showNotification('Sorry, there was an error sending your message. Please try again or contact us directly at jeetendramishra756@gmail.com', 'error');
+
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                });
         });
     }
 });
+
+// Notification function
+function showNotification(message, type) {
+    // Remove any existing notifications
+    const existingNotification = document.querySelector('.notification-message');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification-message notification-${type}`;
+    notification.textContent = message;
+
+    // Insert at the top of the form
+    const form = document.getElementById('contactForm');
+    form.parentElement.insertBefore(notification, form);
+
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        setTimeout(() => notification.remove(), 300);
+    }, 5000);
+}

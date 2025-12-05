@@ -98,9 +98,7 @@
 
             <div class="contact-form-wrapper fade-in-up">
                 <h2>Send Us a Message</h2>
-                <form class="contact-form" id="contactForm"
-                    action="mailto:jeetendramishra756@gmail.com;birendra.stpl@gmail.com" method="post"
-                    enctype="text/plain">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name" class="form-label">Full Name *</label>
                         <input type="text" id="name" name="name" class="form-input" required maxlength="100"
@@ -144,6 +142,14 @@
 
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("OATR17jlAA5qzlMnN"); // Replace with your EmailJS public key
+        })();
+    </script>
 
     <script src="contact-validation.js"></script>
     <script src="load-footer.js"></script>
